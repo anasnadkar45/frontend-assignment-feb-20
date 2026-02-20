@@ -9,7 +9,7 @@ const Info = ({
 }) => (
   <div>
     <p className="text-sm text-muted-foreground">{label}</p>
-    <p className={`text-lg font-semibold ${highlight ? "text-destructive" : ""}`}>
+    <p className={`font-semibold ${highlight ? "text-destructive" : ""}`}>
       {value}
     </p>
   </div>

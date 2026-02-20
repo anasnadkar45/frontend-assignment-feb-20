@@ -21,7 +21,7 @@ const PDFViewer = ({ pageNumber, setPageNumber }: Props) => {
         setNumPages(numPages);
     }
     return (
-        <div className="h-screen flex-1 flex-col justify-between ">
+        <div className="h-[91vh] flex flex-col">
 
             {/* PDF AREA */}
             <div className="flex-1 min-h-0 overflow-auto flex justify-center items-start p-2">
@@ -39,7 +39,7 @@ const PDFViewer = ({ pageNumber, setPageNumber }: Props) => {
             </div>
 
             {/* NAVIGATION BAR */}
-            <div className="bg-secondary border-t p-4 flex items-center justify-center gap-6 shadow-md">
+            <div className="bg-secondary border-t p-4 flex items-center justify-center gap-6 shadow-md flex-shrink-0">
                 <Button
                     disabled={pageNumber <= 1}
                     onClick={() => setPageNumber(pageNumber - 1)}

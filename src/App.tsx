@@ -1,7 +1,7 @@
 import PDFViewer from "./components/PDFViewer";
 import Dashboard from "./components/Dashboard";
 import { useState } from "react";
-import { Button } from "./components/ui/button";
+
 import {
   Select,
   SelectContent,
@@ -25,7 +25,7 @@ const App = () => {
             value={viewMode}
             onValueChange={(value: "pdf" | "dashboard" | "both") => setViewMode(value)}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-45">
               <SelectValue placeholder="View Mode" />
             </SelectTrigger>
             <SelectContent>
@@ -64,7 +64,7 @@ const App = () => {
         <div className="flex-1 overflow-hidden">
           {!showPdf ? (
             <div className="h-full overflow-y-auto">
-              <Dashboard />
+              <Dashboard pageNumber={pageNumber} setPageNumber={setPageNumber} />
             </div>
           ) : (
             <PDFViewer
@@ -81,7 +81,7 @@ const App = () => {
         {/* DASHBOARD ONLY */}
         {viewMode === "dashboard" && (
           <div className="w-full overflow-y-auto">
-            <Dashboard />
+            <Dashboard pageNumber={pageNumber} setPageNumber={setPageNumber} />
           </div>
         )}
 
@@ -99,7 +99,7 @@ const App = () => {
         {viewMode === "both" && (
           <>
             <div className="w-1/2 overflow-y-auto border-r">
-              <Dashboard />
+              <Dashboard pageNumber={pageNumber} setPageNumber={setPageNumber} />
             </div>
 
             <div className="w-1/2">
