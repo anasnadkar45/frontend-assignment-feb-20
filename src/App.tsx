@@ -18,14 +18,14 @@ const App = () => {
   return (
     <div className="h-[98vh] border m-2 rounded-md overflow-hidden">
 
-      <div className="p-4 border-b flex items-center justify-between">
+      <div className="p-4 border-b flex items-center justify-between bg-secondary">
         <h1 className="text-2xl font-semibold font-mono">SuperClaims Assignment</h1>
         <div>
           <Select
             value={viewMode}
             onValueChange={(value: "pdf" | "dashboard" | "both") => setViewMode(value)}
           >
-            <SelectTrigger className="w-45">
+            <SelectTrigger className="w-45 border border-border bg-background">
               <SelectValue placeholder="View Mode" />
             </SelectTrigger>
             <SelectContent>
